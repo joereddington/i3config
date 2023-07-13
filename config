@@ -45,7 +45,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal -n "Terminal"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -190,7 +190,6 @@ bar {
 
 # Joe's modifications
 
-default_border pixel 30
 bindsym $mod+Shift+minus move scratchpad
 
 bindsym $mod+minus scratchpad show
@@ -208,4 +207,9 @@ bindsym --release $mod+Print exec "scrot  $HOME/Downloads/`date +%Y-%m-%d_%H:%M:
 bindsym --release Ctrl+Print exec scrot -s -e 'xclip -selection clipboard -t image/png -i $f'
 bindsym Ctrl+$mod+Print exec --NO-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 bindsym Ctrl+Shift+Print exec --NO-startup-id maim --select | xclip -selection clipboard -t image/png
+
+
+# I want all windows to have a border (at least while I'm learning) 
+for_window [class=.*] border pixel 8
+
 
