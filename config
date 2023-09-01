@@ -50,8 +50,9 @@ bindsym $mod+Return exec i3-sensible-terminal -n "Terminal"
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -b -fn 'Ubuntu Mono:bold:pixelsize=25'
+# start a program launcher)
+bindsym $mod+d exec rofi -show run
+#bindsym $mod+d exec --no-startup-id dmenu_run -b -fn 'Ubuntu Mono:bold:pixelsize=35'
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -193,7 +194,7 @@ bar {
 bindsym $mod+Shift+minus move scratchpad
 
 bindsym $mod+minus scratchpad show
-bindsym $mod+y resize set 1200 px 800 px, move position center
+bindsym $mod+y resize set 1800 px 1600 px, move position center
 exec "setxkbmap -layout us,gb"
 exec "feh --bg-scale Pictures/Wallpapers/5651500.jpg"
 
@@ -212,4 +213,13 @@ bindsym Ctrl+Shift+Print exec --NO-startup-id maim --select | xclip -selection c
 # I want all windows to have a border (at least while I'm learning) 
 for_window [class=.*] border pixel 8
 
+
+
+
+# copy Q rules 
+for_window [class="copyq"] floating enable # This works! 
+
+
+# run localsetup
+exec --NO-startup-id ~/scripts/localsetup.sh
 
