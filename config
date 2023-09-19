@@ -223,3 +223,7 @@ for_window [class="copyq"] floating enable # This works!
 # run localsetup
 exec --NO-startup-id ~/scripts/localsetup.sh
 
+
+# gapbs
+gaps inner 15px
+gaps outer 10px 
