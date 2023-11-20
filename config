@@ -123,18 +123,29 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace (The wallpaper thing isn't pretty but...)
-set $feh exec --NO-startup-id feh --bg-scale
-bindsym $mod+1 $feh ~/Pictures/wp/1.jpg; workspace 1
-bindsym $mod+2 $feh ~/Pictures/wp/2.jpg; workspace 2
-bindsym $mod+3 $feh ~/Pictures/wp/3.jpg; workspace 3
-bindsym $mod+4 $feh ~/Pictures/wp/4.jpg; workspace 4
-bindsym $mod+5 $feh ~/Pictures/wp/5.jpg; workspace 5
-bindsym $mod+6 $feh ~/Pictures/wp/6.jpg; workspace 6
-bindsym $mod+7 $feh ~/Pictures/wp/7.jpg; workspace 7
-bindsym $mod+8 $feh ~/Pictures/wp/8.jpg; workspace 8
-bindsym $mod+9 $feh ~/Pictures/wp/9.jpg; workspace 9
-bindsym $mod+0 $feh ~/Pictures/wp/10.jpg; workspace 10
+#set $feh exec --NO-startup-id feh --bg-scale
+#bindsym $mod+1 $feh ~/Pictures/wp/1.jpg; workspace 1
+#bindsym $mod+2 $feh ~/Pictures/wp/2.jpg; workspace 2
+#bindsym $mod+3 $feh ~/Pictures/wp/3.jpg; workspace 3
+#bindsym $mod+4 $feh ~/Pictures/wp/4.jpg; workspace 4
+#bindsym $mod+5 $feh ~/Pictures/wp/5.jpg; workspace 5
+#bindsym $mod+6 $feh ~/Pictures/wp/6.jpg; workspace 6
+#bindsym $mod+7 $feh ~/Pictures/wp/7.jpg; workspace 7
+#bindsym $mod+8 $feh ~/Pictures/wp/8.jpg; workspace 8
+#bindsym $mod+9 $feh ~/Pictures/wp/9.jpg; workspace 9
+#bindsym $mod+0 $feh ~/Pictures/wp/10.jpg; workspace 10
 
+
+# Define keybindings for changing the background color and switching workspaces
+bindsym $mod+1 workspace 1; exec --NO-startup-id xsetroot -solid "#FFC0CB" # Pastel Pink
+bindsym $mod+2 workspace 2; exec --NO-startup-id xsetroot -solid "#ADD8E6" # Pastel Blue
+bindsym $mod+3 workspace 3; exec --NO-startup-id xsetroot -solid "#98FB98" # Pastel Green
+bindsym $mod+4 workspace 4; exec --NO-startup-id xsetroot -solid "#FFFACD" # Pastel Yellow
+bindsym $mod+5 workspace 5; exec --NO-startup-id xsetroot -solid "#E6E6FA" # Lavender
+bindsym $mod+6 workspace 6; exec --NO-startup-id xsetroot -solid "#FFDAB9" # Peachpuff
+bindsym $mod+7 workspace 7; exec --NO-startup-id xsetroot -solid "#FFA07A" # Light Salmon
+bindsym $mod+8 workspace 8; exec --NO-startup-id xsetroot -solid "#FFFFFF" # White
+bindsym $mod+9 workspace 9; exec --NO-startup-id xsetroot -solid "#808080" # Gray
 
 
 # move focused container to workspace
