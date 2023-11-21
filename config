@@ -36,10 +36,14 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym F5 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym F4 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym F6 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+
+# Other audio
+bindsym F1 exec --no-startup-id playerctl previous
+bindsym F2 exec --no-startup-id playerctl play-pause 
+bindsym F3 exec --no-startup-id playerctl next 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -203,14 +207,11 @@ bar {
 # Joe's modifications
 
 bindsym $mod+Shift+minus move scratchpad
-
 bindsym $mod+minus scratchpad show
 bindsym $mod+y resize set 1800 px 1600 px, move position center
-exec "setxkbmap -layout us,gb"
-exec "feh --bg-scale Pictures/Wallpapers/5651500.jpg"
+exec "setxkbmap -layout us"
 
 
-## screenshots 
 ## Screenshots
 bindsym --release Print exec "scrot -s $HOME/Downloads/`date +%Y-%m-%d_%H:%M:%S`.png"
 bindsym --release $mod+Print exec "scrot  $HOME/Downloads/`date +%Y-%m-%d_%H:%M:%S`.png"
@@ -230,9 +231,6 @@ for_window [class=.*] border pixel 8
 # copy Q rules 
 for_window [class="copyq"] floating enable # This works! 
 
-
-# run localsetup
-exec --NO-startup-id ~/scripts/localsetup.sh
 
 
 # gapbs
