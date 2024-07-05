@@ -242,7 +242,7 @@ bindsym --release Ctrl+Page_Down exec /home/joe/git/delores/from_command_line.sh
 
 
 # I want all windows to have a border (at least while I'm learning) 
-for_window [class=.*] border pixel 8
+for_window [class=.*] border pixel 4
 
 
 
@@ -251,13 +251,23 @@ for_window [class=.*] border pixel 8
 exec --no-startup-id copyq
 for_window [class="copyq"] floating enable # This works! 
 
-# Top one doesnt' work
-exec --no-startup-id setxkbmap us > ~/setxkbmap.log 2>&1 
-exec --no-startup-id xmodmap /home/joe/.Xmodmap 
+# Correcting setxkbmap command
+exec --NO-startup-id sh -c 'setxkbmap -layout us > ~/setxkbmap.log 2>&1'
+exec --NO-startup-id sh -c 'setxkbmap -query > ~/setxkbmap2.log 2>&1'
+exec --NO-startup-id xmodmap /home/joe/.Xmodmap
 
-# The second monitor 
-exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --right-of HDMI-0
-exec --no-startup-id xrandr --output DP-0 --rotate left
+# Combine xrandr commands for the second monitor
+exec --NO-startup-id sh -c 'xrandr --output DP-0 --mode 1920x1080 --right-of HDMI-0 --rotate left'
+
+
+
+# Top one doesnt' work
+#exec --no-startup-id setxkbmap us > ~/setxkbmap.log 2>&1 
+#exec --no-startup-id xmodmap /home/joe/.Xmodmap 
+
+# The second monitor  (this not quite working) - the rotation works fine but NOT the second one 
+#exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --right-of HDMI-0
+#exec --no-startup-id xrandr --output DP-0 --rotate left
 
 
 
