@@ -246,10 +246,11 @@ for_window [class=.*] border pixel 4
 
 
 
-
 # copy Q rules 
 exec --no-startup-id copyq
 for_window [class="copyq"] floating enable # This works! 
+bindsym Ctrl+Shift+v exec --NO-startup-id copyq show
+
 
 # Correcting setxkbmap command
 exec --NO-startup-id sh -c 'setxkbmap -layout us > ~/setxkbmap.log 2>&1'
